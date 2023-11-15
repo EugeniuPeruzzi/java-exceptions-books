@@ -6,11 +6,13 @@ public class Book {
 	private String author;
 	private String editor;
 	
-	public Book(String title, int pages, String author, String editor) {
-		getTitle();
-		getPages();
-		getAuthor();
-		getEditor();
+	// inserisco il throws Exception per dire che questa classe ha delle eccezzioni
+	
+	public Book(String title, int pages, String author, String editor) throws Exception{
+		setTitle(title);
+		setPages(pages);
+		setAuthor(author);
+		setEditor(editor);
 	}
 	
 	
@@ -18,7 +20,10 @@ public class Book {
 		return title;
 	}
 	
-	public void setTitle(String title) {
+	public void setTitle(String title)throws Exception{
+	    if (title == null || title.isEmpty()) {
+	        throw new Exception("Errore scrittura: il titolo è vuoto.");
+	    }
 		this.title = title;
 	}
 
@@ -26,7 +31,10 @@ public class Book {
 		return pages;
 	}
 
-	public void setPages(int pages) {
+	public void setPages(int pages) throws Exception {
+	    if (pages <= 0) {
+	        throw new Exception("Errore scrittura: il titolo è vuoto.");
+	    }
 		this.pages = pages;
 	}
 
@@ -34,7 +42,10 @@ public class Book {
 		return author;
 	}
 
-	public void setAuthor(String author) {
+	public void setAuthor(String author) throws Exception {
+	    if (author == null || author.isEmpty()) {
+	        throw new Exception("Errore scrittura: il titolo è vuoto.");
+	    }
 		this.author = author;
 	}
 
@@ -42,7 +53,22 @@ public class Book {
 		return editor;
 	}
 
-	public void setEditor(String editor) {
+	public void setEditor(String editor) throws Exception {
+	    if (editor == null || author.isEmpty()) {
+	        throw new Exception("Errore scrittura: il titolo è vuoto.");
+	    }
 		this.editor = editor;
+	}
+	
+
+	@Override
+	public String toString() {
+		
+		return "_____________________ \n"
+				+ "Titolo: " + getTitle() + "\n"
+				+ "Pagine: " + getPages() + "\n"
+				+ "Autore: " + getAuthor() + "\n"
+				+ "Editor: " + getEditor() + "\n";
+				
 	}
 }
