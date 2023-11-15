@@ -33,7 +33,7 @@ public class Book {
 
 	public void setPages(int pages) throws Exception {
 	    if (pages <= 0) {
-	        throw new Exception("Errore scrittura: il titolo è vuoto.");
+	        throw new Exception("Errore scrittura: il numero delle pagine deve essere superiore a 0.");
 	    }
 		this.pages = pages;
 	}
@@ -44,7 +44,7 @@ public class Book {
 
 	public void setAuthor(String author) throws Exception {
 	    if (author == null || author.isEmpty()) {
-	        throw new Exception("Errore scrittura: il titolo è vuoto.");
+	        throw new Exception("Errore scrittura: l'autore è vuoto.");
 	    }
 		this.author = author;
 	}
@@ -55,7 +55,7 @@ public class Book {
 
 	public void setEditor(String editor) throws Exception {
 	    if (editor == null || author.isEmpty()) {
-	        throw new Exception("Errore scrittura: il titolo è vuoto.");
+	        throw new Exception("Errore scrittura: l'editore e vuoto.");
 	    }
 		this.editor = editor;
 	}
