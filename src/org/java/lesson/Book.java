@@ -54,7 +54,7 @@ public class Book {
 	}
 
 	public void setEditor(String editor) throws Exception {
-	    if (editor == null || author.isEmpty()) {
+	    if (editor == null || editor.isEmpty()) {
 	        throw new Exception("Errore scrittura: l'editore e vuoto.");
 	    }
 		this.editor = editor;
